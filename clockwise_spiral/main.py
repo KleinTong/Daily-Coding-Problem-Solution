@@ -65,6 +65,6 @@ if __name__ == '__main__':
     arr4 = []
 
     # clockwise(arr1, 4, 5)
-    # clockwise(arr2, 3, 2)
+    clockwise(arr2, 3, 2)
     # clockwise(arr3, 1, 1)
-    clockwise(arr3, 01)
+    # clockwise(arr3, 0, 1)
