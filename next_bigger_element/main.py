@@ -24,6 +24,12 @@ def next_bigger(node):
                 return parent.data
             # right subtree
             elif parent.right == item:
+                item = parent
+                while item.parent:
+                    if item.parent.left == item:
+                        return item.parent.data
+                    else:
+                        item = item.parent
                 return None
         else:
             return mininum_node(item.right).data
@@ -36,12 +42,16 @@ if __name__ == '__main__':
     node_3 = Node(30)
     node_4 = Node(22)
     node_5 = Node(35)
+    node_6 = Node(6)
+    node_7 = Node(7)
     tree.insert_with_parent_setting(node_1)
     tree.insert_with_parent_setting(node_2)
     tree.insert_with_parent_setting(node_3)
     tree.insert_with_parent_setting(node_4)
     tree.insert_with_parent_setting(node_5)
+    tree.insert_with_parent_setting(node_6)
+    tree.insert_with_parent_setting(node_7)
     tree.show()
 
     print('{}\'s next bigger data is {}'.format(node_1.data, next_bigger(node_1)))
-    print('{}\'s next bigger data is {}'.format(node_2.data, next_bigger(node_2)))
+    print('{}\'s next bigger data is {}'.format(node_7.data, next_bigger(node_5)))
